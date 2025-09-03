@@ -155,6 +155,44 @@
       color:#102016; font-weight:500;
     }
 
+    /* ===== Education Section ===== */
+    .education{
+      margin-top:40px;
+      background: linear-gradient(180deg, rgba(22,34,25,.8), rgba(22,34,25,.5));
+      border: 1px solid rgba(156,207,151,.12);
+      border-radius: var(--radius);
+      padding:30px;
+      box-shadow: var(--shadow);
+    }
+    .education h2{ margin:0 0 20px; font-size:24px; text-align:center }
+    .education-grid{
+      display:grid; gap:20px;
+    }
+    .education-item{
+      background: linear-gradient(180deg, rgba(26,40,31,.8), rgba(26,40,31,.6));
+      border:1px solid rgba(156,207,151,.14);
+      border-radius: var(--radius-sm);
+      padding:20px;
+    }
+    .education-header{
+      display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;
+      flex-wrap:wrap; gap:8px;
+    }
+    .education-header h3{ 
+      margin:0; color:var(--text); font-size:18px; flex:1; min-width:200px;
+    }
+    .education-date{ 
+      color:var(--brand); font-size:14px; font-weight:600; 
+      background: rgba(156,207,151,.1);
+      padding:6px 10px; border-radius:6px; white-space:nowrap;
+    }
+    .institution{ 
+      color:var(--brand); font-weight:600; margin-bottom:8px; display:block; 
+    }
+    .education-description{ 
+      color:var(--muted); line-height:1.5; 
+    }
+
     /* ===== Back to Home ===== */
     .back-home{
       margin-top:40px; text-align:center;
@@ -175,6 +213,8 @@
     @media(max-width: 768px){
       .row{ grid-template-columns: 1fr; gap:12px }
       .row .when{ text-align:left }
+      .education-header{ flex-direction:column; align-items:flex-start; }
+      .education-header h3{ min-width:auto; }
     }
   </style>
 </head>
@@ -239,6 +279,26 @@
           <span class="company">First Republic Bank</span>
           <div class="description">
             I developed Python scripts for AWS Lambda to automate CloudTrail key encryption, strengthening cloud data security and ensuring compliance. I designed and maintained scalable AWS infrastructure while monitoring data usage and managing access controls to protect sensitive information. To further safeguard the cloud environment, I analyzed security incidents, implemented encryption techniques to maintain data integrity, and devised mitigation strategies to prevent tampering and unauthorized disclosure.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="education">
+      <h2>Education</h2>
+      <div class="education-grid">
+        <div class="education-item">
+          <div class="education-header">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <span class="education-date">2020 - 2024</span>
+          </div>
+          <div class="education-details">
+            <span class="institution">University of California, Berkeley</span>
+            <div class="education-description">
+              Focused on cybersecurity, software engineering, and data structures. 
+              Relevant coursework included computer security, cryptography, network security, 
+              and software engineering principles.
+            </div>
           </div>
         </div>
       </div>
