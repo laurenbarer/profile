@@ -25,6 +25,36 @@
       --maxw: 1080px;
     }
 
+    /* Keep nav links on one line on small screens */
+@media (max-width: 600px) {
+  .nav-inner { padding: 10px 12px; gap: 8px; }
+
+  .logo { gap: 8px; font-size: 14px; flex: 0 0 auto; }   /* tighten logo */
+  .logo-badge { width: 22px; height: 22px; border-radius: 8px; }
+
+  .nav-links { 
+    display: flex; 
+    gap: 10px;
+    white-space: nowrap;       /* prevent wrapping */
+    flex: 1 1 auto;            /* allow links to shrink */
+    justify-content: flex-end; 
+  }
+
+  .nav-links a {
+    font-size: 13px;           /* smaller text */
+    margin: 0;                 /* remove extra left margin */
+    font-weight: 600;
+    letter-spacing: 0;         /* tighten tracking */
+  }
+}
+
+/* Extra-tight mode for very narrow phones */
+@media (max-width: 420px) {
+  .logo span { display: none; }          /* hide "Lauren Barer", keep badge */
+  .nav-links a { font-size: 12px; }
+}
+
+
     * { box-sizing:border-box }
     html, body { margin:0; height:100% }
     body{
@@ -154,7 +184,7 @@
     <div class="nav-inner">
       <div class="logo">
         <span class="logo-badge" aria-hidden="true"></span>
-        <a href="index.html" style="color: inherit;">Lauren Barer</a>
+        <a href="index.html" style="color: inherit;">LB</a>
       </div>
       <div class="nav-links">
         <a href="projects.html">Projects</a>
@@ -309,7 +339,7 @@
     </div>
 
     <footer>
-      © <span id="year"></span> Lauren Barer
+      © <span id="year"></span> Lauren Barer 2025
     </footer>
   </div>
 
