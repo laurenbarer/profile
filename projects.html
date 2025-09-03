@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Lauren Barer</title>
+  <meta name="description" content="Security automation projects, SOC tools, and technical solutions by Lauren Barer." />
+  <meta name="color-scheme" content="light dark" />
+
+  <style>
+    /* ===== Olive Green Design System ===== */
+    :root{
+      --bg: #0e1511;          /* deep olive-black */
+      --bg-soft:#121b15;      /* slightly lighter */
+      --card:#162219;         /* card surface */
+      --elev:#1a281f;         /* elevated surface */
+      --text:#e9f0ea;         /* primary text */
+      --muted:#b7c3b9;        /* secondary text */
+      --brand:#9CCF97;        /* sage/olive accent */
+      --brand-strong:#7EB47A; /* stronger accent */
+      --ring: rgba(156,207,151,.45);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --maxw: 1080px;
+    }
+
+    * { box-sizing:border-box }
+    html, body { margin:0; height:100% }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(156,207,151,.12), transparent 60%),
+        radial-gradient(900px 600px at 120% 20%, rgba(126,180,122,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 60%, var(--bg) 100%);
+      line-height:1.6;
+      letter-spacing:.2px;
+    }
+
+    a { color: var(--brand); text-decoration: none }
+    a:hover { color: var(--brand-strong) }
+
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 80px }
+
+    /* ===== Top Nav ===== */
+    .nav{
+      position: sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(18,27,21,.7), rgba(18,27,21,.2));
+      border-bottom: 1px solid rgba(156,207,151,.12);
+    }
+    .nav-inner{ max-width: var(--maxw); margin:0 auto; padding: 14px 20px; display:flex; gap:16px; align-items:center; justify-content:space-between }
+    .logo{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.4px
+    }
+    .logo-badge{
+      width:28px; height:28px; border-radius:10px; background:linear-gradient(135deg, var(--brand), var(--brand-strong));
+      box-shadow: 0 4px 16px rgba(126,180,122,.35);
+    }
+    .nav-links a{ margin-left:18px; font-weight:600; color:var(--text); opacity:.9 }
+    .nav-links a:hover{ color:var(--brand) }
+
+    /* ===== Page Header ===== */
+    .page-header{
+      margin-top:40px; text-align:center; margin-bottom:40px;
+    }
+    .page-header h1{ margin:0 0 12px; font-size: clamp(28px, 5vw, 42px); line-height:1.2 }
+    .page-header p{ margin:0; color:var(--muted); font-size:18px }
+
+    /* ===== Projects grid ===== */
+    .grid{
+      display:grid; gap:20px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .col-4{ grid-column: span 12 }
+    @media(min-width:720px){ .col-4{ grid-column: span 6 } }
+    @media(min-width:980px){ .col-4{ grid-column: span 4 } }
+
+    .project{
+      display:flex; flex-direction:column; gap:12px; height:100%;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(22,34,25,.8), rgba(22,34,25,.5));
+      border: 1px solid rgba(156,207,151,.12);
+      padding:24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(0,0,0,.4);
+    }
+    .project h3{ margin:0; font-size:20px; color:var(--brand) }
+    .project p{ margin:0; color: var(--muted); line-height:1.5 }
+    .project .meta{ margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:14px; color:var(--muted) }
+    .chip{ padding:6px 12px; border-radius:999px; background:rgba(156,207,151,.18); border:1px solid rgba(156,207,151,.28); color:#102016; font-weight:600; font-size:12px }
+
+    /* ===== Back to Home ===== */
+    .back-home{
+      margin-top:40px; text-align:center;
+    }
+    .back-home a{
+      display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:12px; font-weight:600;
+      border:1px solid rgba(156,207,151,.25); background: rgba(22,34,25,.6);
+      transition: all 0.2s ease;
+    }
+    .back-home a:hover{ transform: translateY(-1px); background: rgba(22,34,25,.8) }
+
+    /* ===== Footer ===== */
+    footer{
+      margin-top:60px; padding:18px; text-align:center; color:var(--muted);
+      border-top:1px solid rgba(156,207,151,.12)
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-badge" aria-hidden="true"></span>
+        <a href="index.html" style="color: inherit;">Lauren Barer</a>
+      </div>
+      <div class="nav-links">
+        <a href="projects.html" style="color: var(--brand);">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="wrap">
+    <div class="page-header">
+      <h1>Highlighted Projects</h1>
+      <p>Security automation tools, SOC scripts, and technical solutions</p>
+    </div>
+
+    <div class="grid">
+      <article class="project col-4">
+        <h3>Meta Trademark Auto-Reporter</h3>
+        <p>Node.js + Puppeteer script that auto-submits trademark reports to Meta with Gmail 2FA retrieval, screenshot evidence, and per-client profiles. Handles bulk submissions and maintains detailed logs for compliance tracking.</p>
+        <div class="meta">
+          <span class="chip">Node.js</span>
+          <span class="chip">Puppeteer</span>
+          <a href="#" aria-label="View project link">Demo →</a>
+        </div>
+      </article>
+
+      <article class="project col-4">
+        <h3>Multi-Platform Takedown Agent</h3>
+        <p>Python dispatcher that maps URLs to platforms (FB/TikTok/Twitter/YouTube), dedupes, validates LOA/trademark artifacts, then runs per-platform automations sequentially. Includes rate limiting and error handling.</p>
+        <div class="meta">
+          <span class="chip">Python</span>
+          <span class="chip">APIs</span>
+          <a href="#" aria-label="View project link">Repo →</a>
+        </div>
+      </article>
+
+      <article class="project col-4">
+        <h3>Telegram Intelligence Report Template</h3>
+        <p>Polished HTML→PDF generator for client-ready reports (evidence, WHOIS, IPs). Gradient header, auto-pagination, and consistent typography. Automates report generation from raw intelligence data.</p>
+        <div class="meta">
+          <span class="chip">HTML/CSS</span>
+          <span class="chip">PDF</span>
+          <a href="#" aria-label="View project link">Preview →</a>
+        </div>
+      </article>
+
+      <article class="project col-4">
+        <h3>SOC Dashboard Automation</h3>
+        <p>Real-time dashboard that aggregates threat intelligence feeds, automates incident classification, and provides visual analytics for SOC team performance metrics and response times.</p>
+        <div class="meta">
+          <span class="chip">React</span>
+          <span class="chip">Node.js</span>
+          <a href="#" aria-label="View project link">Live →</a>
+        </div>
+      </article>
+
+      <article class="project col-4">
+        <h3>Brand Monitoring Bot</h3>
+        <p>Automated system that scans social media platforms for brand impersonation, generates evidence packages, and initiates takedown procedures. Includes machine learning for false positive reduction.</p>
+        <div class="meta">
+          <span class="chip">Python</span>
+          <span class="chip">ML</span>
+          <a href="#" aria-label="View project link">Details →</a>
+        </div>
+      </article>
+
+      <article class="project col-4">
+        <h3>Security Training Simulator</h3>
+        <p>Interactive web application that simulates real-world security scenarios for team training. Includes phishing simulations, incident response drills, and performance tracking.</p>
+        <div class="meta">
+          <span class="chip">Vue.js</span>
+          <span class="chip">Training</span>
+          <a href="#" aria-label="View project link">Try →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Lauren Barer · Built with a single HTML file · Olive-green vibes 🌿
+    </footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

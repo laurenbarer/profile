@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Lauren Barer</title>
+  <meta name="description" content="Get in touch with Lauren Barer for security automation opportunities, collaborations, or just to say hello." />
+  <meta name="color-scheme" content="light dark" />
+
+  <style>
+    /* ===== Olive Green Design System ===== */
+    :root{
+      --bg: #0e1511;          /* deep olive-black */
+      --bg-soft:#121b15;      /* slightly lighter */
+      --card:#162219;         /* card surface */
+      --elev:#1a281f;         /* elevated surface */
+      --text:#e9f0ea;         /* primary text */
+      --muted:#b7c3b9;        /* secondary text */
+      --brand:#9CCF97;        /* sage/olive accent */
+      --brand-strong:#7EB47A; /* stronger accent */
+      --ring: rgba(156,207,151,.45);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --maxw: 1080px;
+    }
+
+    * { box-sizing:border-box }
+    html, body { margin:0; height:100% }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(156,207,151,.12), transparent 60%),
+        radial-gradient(900px 600px at 120% 20%, rgba(126,180,122,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 60%, var(--bg) 100%);
+      line-height:1.6;
+      letter-spacing:.2px;
+    }
+
+    a { color: var(--brand); text-decoration: none }
+    a:hover { color: var(--brand-strong) }
+
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 80px }
+
+    /* ===== Top Nav ===== */
+    .nav{
+      position: sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(18,27,21,.7), rgba(18,27,21,.2));
+      border-bottom: 1px solid rgba(156,207,151,.12);
+    }
+    .nav-inner{ max-width: var(--maxw); margin:0 auto; padding: 14px 20px; display:flex; gap:16px; align-items:center; justify-content:space-between }
+    .logo{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.4px
+    }
+    .logo-badge{
+      width:28px; height:28px; border-radius:10px; background:linear-gradient(135deg, var(--brand), var(--brand-strong));
+      box-shadow: 0 4px 16px rgba(126,180,122,.35);
+    }
+    .nav-links a{ margin-left:18px; font-weight:600; color:var(--text); opacity:.9 }
+    .nav-links a:hover{ color:var(--brand) }
+
+    /* ===== Page Header ===== */
+    .page-header{
+      margin-top:40px; text-align:center; margin-bottom:40px;
+    }
+    .page-header h1{ margin:0 0 12px; font-size: clamp(28px, 5vw, 42px); line-height:1.2 }
+    .page-header p{ margin:0; color:var(--muted); font-size:18px }
+
+    /* ===== Contact Content ===== */
+    .contact-content{
+      display:grid; gap:30px; grid-template-columns: 1fr 1fr;
+      margin-bottom:40px;
+    }
+
+    .contact-info{
+      background: linear-gradient(180deg, rgba(22,34,25,.8), rgba(22,34,25,.5));
+      border: 1px solid rgba(156,207,151,.12);
+      border-radius: var(--radius);
+      padding:30px;
+      box-shadow: var(--shadow);
+    }
+    .contact-info h2{ margin:0 0 20px; color:var(--brand); font-size:24px }
+    .contact-info p{ margin:0 0 16px; color:var(--muted); line-height:1.5 }
+
+    .contact-methods{
+      background: linear-gradient(180deg, rgba(22,34,25,.8), rgba(22,34,25,.5));
+      border: 1px solid rgba(156,207,151,.12);
+      border-radius: var(--radius);
+      padding:30px;
+      box-shadow: var(--shadow);
+    }
+    .contact-methods h2{ margin:0 0 20px; color:var(--brand); font-size:24px }
+
+    .contact-item{
+      display:flex; align-items:center; gap:12px; padding:16px 0;
+      border-bottom: 1px solid rgba(156,207,151,.08);
+    }
+    .contact-item:last-child{ border-bottom: none }
+    .contact-item .icon{
+      width:40px; height:40px; border-radius:10px; 
+      background: linear-gradient(135deg, var(--brand), var(--brand-strong));
+      display:flex; align-items:center; justify-content:center;
+      font-size:18px; color:#0e1511; font-weight:bold;
+    }
+    .contact-item .details h3{ margin:0 0 4px; color:var(--text); font-size:16px }
+    .contact-item .details p{ margin:0; color:var(--muted); font-size:14px }
+
+    /* ===== Availability ===== */
+    .availability{
+      background: linear-gradient(180deg, rgba(22,34,25,.8), rgba(22,34,25,.5));
+      border: 1px solid rgba(156,207,151,.12);
+      border-radius: var(--radius);
+      padding:30px;
+      box-shadow: var(--shadow);
+      margin-bottom:40px;
+    }
+    .availability h2{ margin:0 0 20px; color:var(--brand); font-size:24px; text-align:center }
+    .availability-grid{
+      display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .availability-item{
+      background: linear-gradient(180deg, rgba(26,40,31,.8), rgba(26,40,31,.6));
+      border:1px solid rgba(156,207,151,.14);
+      border-radius: var(--radius-sm);
+      padding:20px;
+      text-align:center;
+    }
+    .availability-item h3{ margin:0 0 8px; color:var(--brand); font-size:16px }
+    .availability-item p{ margin:0; color:var(--muted); font-size:14px }
+
+    /* ===== Back to Home ===== */
+    .back-home{
+      margin-top:40px; text-align:center;
+    }
+    .back-home a{
+      display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:12px; font-weight:600;
+      border:1px solid rgba(156,207,151,.25); background: rgba(22,34,25,.6);
+      transition: all 0.2s ease;
+    }
+    .back-home a:hover{ transform: translateY(-1px); background: rgba(22,34,25,.8) }
+
+    /* ===== Footer ===== */
+    footer{
+      margin-top:60px; padding:18px; text-align:center; color:var(--muted);
+      border-top:1px solid rgba(156,207,151,.12)
+    }
+
+    @media(max-width: 768px){
+      .contact-content{ grid-template-columns: 1fr }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-badge" aria-hidden="true"></span>
+        <a href="index.html" style="color: inherit;">Lauren Barer</a>
+      </div>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html" style="color: var(--brand);">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="wrap">
+    <div class="page-header">
+      <h1>Get In Touch</h1>
+      <p>Let's connect and explore opportunities together</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>Let's Connect</h2>
+        <p>I'm always excited to discuss new opportunities, share ideas, or just have a conversation about security automation and technology.</p>
+        <p>Whether you're looking for a security automation expert, want to collaborate on a project, or just want to chat about the latest in SOC operations, I'd love to hear from you.</p>
+        <p>I'm particularly interested in roles that combine technical leadership with hands-on security work, and I'm always happy to share code samples or walk through demos of my projects.</p>
+      </div>
+
+      <div class="contact-methods">
+        <h2>Contact Methods</h2>
+        <div class="contact-item">
+          <div class="icon">📧</div>
+          <div class="details">
+            <h3>Email</h3>
+            <p><a href="mailto:labarer49@gmail.com">labarer49@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">💼</div>
+          <div class="details">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/lauren-barer/" target="_blank" rel="noopener">/in/lauren-barer</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">🐙</div>
+          <div class="details">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/laurenbarer" target="_blank" rel="noopener">@laurenbarer</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">📄</div>
+          <div class="details">
+            <h3>Resume</h3>
+            <p><a href="resume.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="availability">
+      <h2>What I'm Looking For</h2>
+      <div class="availability-grid">
+        <div class="availability-item">
+          <h3>🔧 SOC Engineering</h3>
+          <p>Building and improving security operations center tools and automation</p>
+        </div>
+        <div class="availability-item">
+          <h3>💡 Solutions Consulting</h3>
+          <p>Helping organizations implement security automation and best practices</p>
+        </div>
+        <div class="availability-item">
+          <h3>🤖 Security Automation</h3>
+          <p>Developing custom tools and workflows for security teams</p>
+        </div>
+        <div class="availability-item">
+          <h3>👥 Team Leadership</h3>
+          <p>Leading security teams and driving technical strategy</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Lauren Barer · Built with a single HTML file · Olive-green vibes 🌿
+    </footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

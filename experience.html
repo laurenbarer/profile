@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience — Lauren Barer</title>
+  <meta name="description" content="Professional experience in security analysis, SOC automation, and team leadership by Lauren Barer." />
+  <meta name="color-scheme" content="light dark" />
+
+  <style>
+    /* ===== Olive Green Design System ===== */
+    :root{
+      --bg: #0e1511;          /* deep olive-black */
+      --bg-soft:#121b15;      /* slightly lighter */
+      --card:#162219;         /* card surface */
+      --elev:#1a281f;         /* elevated surface */
+      --text:#e9f0ea;         /* primary text */
+      --muted:#b7c3b9;        /* secondary text */
+      --brand:#9CCF97;        /* sage/olive accent */
+      --brand-strong:#7EB47A; /* stronger accent */
+      --ring: rgba(156,207,151,.45);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --maxw: 1080px;
+    }
+
+    * { box-sizing:border-box }
+    html, body { margin:0; height:100% }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(156,207,151,.12), transparent 60%),
+        radial-gradient(900px 600px at 120% 20%, rgba(126,180,122,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 60%, var(--bg) 100%);
+      line-height:1.6;
+      letter-spacing:.2px;
+    }
+
+    a { color: var(--brand); text-decoration: none }
+    a:hover { color: var(--brand-strong) }
+
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 80px }
+
+    /* ===== Top Nav ===== */
+    .nav{
+      position: sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(18,27,21,.7), rgba(18,27,21,.2));
+      border-bottom: 1px solid rgba(156,207,151,.12);
+    }
+    .nav-inner{ max-width: var(--maxw); margin:0 auto; padding: 14px 20px; display:flex; gap:16px; align-items:center; justify-content:space-between }
+    .logo{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.4px
+    }
+    .logo-badge{
+      width:28px; height:28px; border-radius:10px; background:linear-gradient(135deg, var(--brand), var(--brand-strong));
+      box-shadow: 0 4px 16px rgba(126,180,122,.35);
+    }
+    .nav-links a{ margin-left:18px; font-weight:600; color:var(--text); opacity:.9 }
+    .nav-links a:hover{ color:var(--brand) }
+
+    /* ===== Page Header ===== */
+    .page-header{
+      margin-top:40px; text-align:center; margin-bottom:40px;
+    }
+    .page-header h1{ margin:0 0 12px; font-size: clamp(28px, 5vw, 42px); line-height:1.2 }
+    .page-header p{ margin:0; color:var(--muted); font-size:18px }
+
+    /* ===== Timeline ===== */
+    .timeline{ 
+      display:grid; gap:20px; 
+      background: linear-gradient(180deg, rgba(22,34,25,.8), rgba(22,34,25,.5));
+      border: 1px solid rgba(156,207,151,.12);
+      border-radius: var(--radius);
+      padding:30px;
+      box-shadow: var(--shadow);
+    }
+    .row{
+      display:grid; gap:16px; grid-template-columns: 120px 1fr; align-items:flex-start;
+      padding:20px 0;
+      border-bottom: 1px solid rgba(156,207,151,.08);
+    }
+    .row:last-child{ border-bottom: none }
+    .row .when{ 
+      color:var(--brand); font-size:14px; font-weight:600; 
+      background: rgba(156,207,151,.1);
+      padding:8px 12px; border-radius:8px; text-align:center;
+    }
+    .row .item{ 
+      background: linear-gradient(180deg, rgba(26,40,31,.8), rgba(26,40,31,.6)); 
+      border:1px solid rgba(156,207,151,.14); 
+      border-radius:12px; 
+      padding:20px;
+    }
+    .row .item b{ color:var(--text); font-size:18px; display:block; margin-bottom:8px }
+    .row .item .company{ color:var(--brand); font-weight:600; margin-bottom:12px; display:block }
+    .row .item .description{ color:var(--muted); line-height:1.5 }
+
+    /* ===== Skills Section ===== */
+    .skills{
+      margin-top:40px;
+      background: linear-gradient(180deg, rgba(22,34,25,.8), rgba(22,34,25,.5));
+      border: 1px solid rgba(156,207,151,.12);
+      border-radius: var(--radius);
+      padding:30px;
+      box-shadow: var(--shadow);
+    }
+    .skills h2{ margin:0 0 20px; font-size:24px; text-align:center }
+    .skills-grid{
+      display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .skill-category{
+      background: linear-gradient(180deg, rgba(26,40,31,.8), rgba(26,40,31,.6));
+      border:1px solid rgba(156,207,151,.14);
+      border-radius: var(--radius-sm);
+      padding:20px;
+    }
+    .skill-category h3{ margin:0 0 12px; color:var(--brand); font-size:16px }
+    .skill-tags{ display:flex; gap:8px; flex-wrap:wrap }
+    .skill-tag{ 
+      padding:4px 8px; border-radius:6px; font-size:12px; 
+      background:rgba(156,207,151,.18); border:1px solid rgba(156,207,151,.28); 
+      color:#102016; font-weight:500;
+    }
+
+    /* ===== Back to Home ===== */
+    .back-home{
+      margin-top:40px; text-align:center;
+    }
+    .back-home a{
+      display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:12px; font-weight:600;
+      border:1px solid rgba(156,207,151,.25); background: rgba(22,34,25,.6);
+      transition: all 0.2s ease;
+    }
+    .back-home a:hover{ transform: translateY(-1px); background: rgba(22,34,25,.8) }
+
+    /* ===== Footer ===== */
+    footer{
+      margin-top:60px; padding:18px; text-align:center; color:var(--muted);
+      border-top:1px solid rgba(156,207,151,.12)
+    }
+
+    @media(max-width: 768px){
+      .row{ grid-template-columns: 1fr; gap:12px }
+      .row .when{ text-align:left }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-badge" aria-hidden="true"></span>
+        <a href="index.html" style="color: inherit;">Lauren Barer</a>
+      </div>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="experience.html" style="color: var(--brand);">Experience</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="wrap">
+    <div class="page-header">
+      <h1>Professional Experience</h1>
+      <p>My journey in security analysis, SOC automation, and team leadership</p>
+    </div>
+
+    <div class="timeline">
+      <div class="row">
+        <div class="when">2024–Now</div>
+        <div class="item">
+          <b>Security Analyst Team Lead</b>
+          <span class="company">Bolster</span>
+          <div class="description">
+            Lead SOC automation & takedowns (web + social). Own POCs, build scripts, and partner with engineering and customers to drive outcomes. Manage a team of 4 analysts and coordinate with cross-functional teams to improve security posture and response times.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2023–2024</div>
+        <div class="item">
+          <b>Senior Security Analyst</b>
+          <span class="company">Bolster</span>
+          <div class="description">
+            Specialized in brand protection and automated takedown workflows. Developed custom automation scripts for Meta, TikTok, and Twitter platforms. Reduced manual processing time by 70% through intelligent automation.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2022–2023</div>
+        <div class="item">
+          <b>Security Analyst</b>
+          <span class="company">Bolster</span>
+          <div class="description">
+            Conducted threat intelligence analysis and incident response. Built initial automation frameworks for SOC operations. Collaborated with engineering teams to integrate security tools and improve detection capabilities.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2021–2022</div>
+        <div class="item">
+          <b>Cloud Security Intern</b>
+          <span class="company">TechCorp</span>
+          <div class="description">
+            IAM reviews, API design, data processing pipelines. Strong foundation in secure engineering and practical delivery. Worked on container security and cloud infrastructure hardening projects.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2020–2021</div>
+        <div class="item">
+          <b>Backend Development Intern</b>
+          <span class="company">StartupXYZ</span>
+          <div class="description">
+            Developed secure APIs and database systems. Implemented authentication and authorization systems. Gained experience in full-stack development with security-first principles.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Security & SOC</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Incident Response</span>
+            <span class="skill-tag">Threat Intelligence</span>
+            <span class="skill-tag">Brand Protection</span>
+            <span class="skill-tag">SOC Automation</span>
+            <span class="skill-tag">Takedown Workflows</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Programming</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Puppeteer</span>
+            <span class="skill-tag">APIs</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Tools & Platforms</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Meta Business</span>
+            <span class="skill-tag">TikTok Creator</span>
+            <span class="skill-tag">Twitter API</span>
+            <span class="skill-tag">YouTube CMS</span>
+            <span class="skill-tag">AWS</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Leadership</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Team Management</span>
+            <span class="skill-tag">Process Improvement</span>
+            <span class="skill-tag">Cross-functional Collaboration</span>
+            <span class="skill-tag">Mentoring</span>
+            <span class="skill-tag">Project Leadership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Lauren Barer · Built with a single HTML file · Olive-green vibes 🌿
+    </footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
