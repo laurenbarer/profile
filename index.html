@@ -105,7 +105,19 @@
       text-align:center;
     }
     .hobby h3{ margin:0 0 8px; color:var(--brand) }
-    .hobby p{ margin:0; color:var(--muted) }
+    .hobby p{ margin:0 0 12px; color:var(--muted) }
+    .hobby-image{
+      width: 100%;
+      height: 120px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(156,207,151,.2);
+    }
+    .hobby-image img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     /* ===== Navigation Cards ===== */
     .nav-cards{
@@ -166,15 +178,24 @@
       <div class="hobbies-grid">
         <div class="hobby">
           <h3>🐕 My Dog,Mateo</h3>
-          <p>I adore spending time with Mateo, my 6 year old Spaniel especially going on hikes and exploring new places</p>
+          <p>I adore spending time with Mateo, my 6 year old Spaniel especially going on hikes and exploring new places.</p>
+          <div class="hobby-image">
+            <img src="mateo.jpg" alt="Mateo the cocker spaniel" />
+          </div>
         </div>
         <div class="hobby">
           <h3>🎨 Website Design</h3>
           <p>Creating website from the group up for my clients, allowing me to be creative and explore my coding skills.</p>
+          <div class="hobby-image">
+            <img src="website-design.jpg" alt="Website design example" />
+          </div>
         </div>
         <div class="hobby">
           <h3>📚 Reading</h3>
           <p>I love to dive deep into research, as well as a good thriller or crime novel.</p>
+          <div class="hobby-image">
+            <img src="books.jpg" alt="Books and reading" />
+          </div>
         </div>
       </div>
     </section>
